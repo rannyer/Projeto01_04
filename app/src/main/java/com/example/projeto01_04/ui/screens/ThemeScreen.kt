@@ -1,4 +1,5 @@
 package com.example.projeto01_04.ui.screens
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Button
@@ -9,9 +10,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.projeto01_04.ui.theme.components.BtnClassic
 import com.example.projeto01_04.ui.theme.data.ThemeOption
 import com.example.projeto01_04.viewmodels.ThemeViewModel
 
@@ -64,6 +67,21 @@ fun ThemeScreen(viewModel: ThemeViewModel = viewModel()) {
         ) {
             Text("Botao de Exemplo")
         }
+
+        Button(
+            onClick = {},
+            modifier = Modifier.background(MaterialTheme.colorScheme.tertiary ),
+            shape = MaterialTheme.shapes.small
+        ) {
+            Text("Botao de Exemplo 2")
+         }
+
+        BtnClassic(
+            text = "Botao de Exemplo 3",
+            onClick = { print("Clicou!")},
+            level = 2
+        )
+
 
 
 

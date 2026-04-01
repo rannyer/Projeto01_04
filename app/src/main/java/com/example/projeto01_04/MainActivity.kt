@@ -41,11 +41,43 @@ class MainActivity : ComponentActivity() {
 }
 }
 
+
+@Preview(name = "Light Theme")
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
+fun LightThemePreview() {
+    ThemeAppExericio(themeOption = ThemeOption.LIGHT) {
+        Surface(
+            modifier = Modifier.fillMaxSize(),
+            color = MaterialTheme.colorScheme.background
+        ) {
+            ThemeScreen()
+        }
+    }
+}
+
+@Preview(name = "Dark Theme")
+@Composable
+fun DarkThemePreview() {
+    ThemeAppExericio(themeOption = ThemeOption.DARK) {
+        Surface(
+            modifier = Modifier.fillMaxSize(),
+            color = MaterialTheme.colorScheme.background
+        ) {
+            ThemeScreen()
+        }
+    }
+}
+
+@Preview(name = "Netflix Theme")
+@Composable
+fun NetflixThemePreview() {
+    ThemeAppExericio(themeOption = ThemeOption.NETFLIX) {
+        Surface(
+            modifier = Modifier.fillMaxSize(),
+            color = MaterialTheme.colorScheme.background
+        ) {
+            ThemeScreen()
+        }
+    }
 }
 

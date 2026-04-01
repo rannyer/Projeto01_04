@@ -3,7 +3,9 @@ package com.example.projeto01_04.ui.theme
 import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Shapes
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
@@ -11,11 +13,12 @@ import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.unit.dp
 import com.example.projeto01_04.ui.theme.data.ThemeOption
 
 private val DarkColorScheme = darkColorScheme(
     primary = Color(0xFF818CF8),
-    onPrimary = Color(0xFF6360AA),
+    onPrimary = Color(0xFF57D45D),
 
     secondary = Color(0xFFC4B5FD),
     onSecondary = Color(0xFF2E1065),
@@ -79,6 +82,12 @@ private val NetflixDarkColorScheme = darkColorScheme(
     outline = Color(0xFF404040)
 )
 
+val AppShapes = Shapes(
+    small = RoundedCornerShape(4.dp),
+    medium = RoundedCornerShape(8.dp),
+    large = RoundedCornerShape(16.dp)
+)
+
 @Composable
 fun ThemeAppExericio(
     themeOption: ThemeOption,
@@ -97,6 +106,7 @@ fun ThemeAppExericio(
             ThemeOption.SYSTEM -> LightColorScheme
             ThemeOption.NETFLIX -> NetflixDarkColorScheme
         },
-        content = content
+        content = content,
+        shapes = AppShapes
     )
 }
