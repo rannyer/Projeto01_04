@@ -16,7 +16,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.projeto01_04.ui.screens.ThemeScreen
-import com.example.projeto01_04.ui.theme.Projeto01_04Theme
+
 import com.example.projeto01_04.ui.theme.ThemeAppExericio
 import com.example.projeto01_04.ui.theme.data.ThemeOption
 import com.example.projeto01_04.viewmodels.ThemeViewModel
@@ -49,10 +49,3 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
     )
 }
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    Projeto01_04Theme {
-        Greeting("Android")
-    }
-}

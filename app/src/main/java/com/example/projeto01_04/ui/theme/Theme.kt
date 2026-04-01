@@ -57,6 +57,27 @@ private val LightColorScheme = lightColorScheme(
     outline = Color(0xFF9CA3AF)
 )
 
+private val NetflixDarkColorScheme = darkColorScheme(
+    primary = Color(0xFFE50914), // Netflix red
+    onPrimary = Color.White,
+
+    secondary = Color(0xFFB20710),
+    onSecondary = Color.White,
+
+    tertiary = Color(0xFF221F1F),
+    onTertiary = Color.White,
+
+    background = Color(0xFF000000),
+    onBackground = Color(0xFFE5E5E5),
+
+    surface = Color(0xFF141414),
+    onSurface = Color(0xFFE5E5E5),
+
+    surfaceVariant = Color(0xFF2F2F2F),
+    onSurfaceVariant = Color(0xFFB3B3B3),
+
+    outline = Color(0xFF404040)
+)
 
 @Composable
 fun ThemeAppExericio(
@@ -67,36 +88,15 @@ fun ThemeAppExericio(
         ThemeOption.SYSTEM -> isSystemInDarkTheme()
         ThemeOption.LIGHT -> false
         ThemeOption.DARK -> true
+        ThemeOption.NETFLIX -> "n"
     }
     MaterialTheme(
-        colorScheme = if (darkTheme) DarkColorScheme else LightColorScheme,
-        content = content
-    )
-
-
-
-}
-
-@Composable
-fun Projeto01_04Theme(
-    darkTheme: Boolean = isSystemInDarkTheme(),
-    // Dynamic color is available on Android 12+
-    dynamicColor: Boolean = true,
-    content: @Composable () -> Unit
-) {
-    val colorScheme = when {
-        dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
-            val context = LocalContext.current
-            if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
-        }
-
-        darkTheme -> DarkColorScheme
-        else -> LightColorScheme
-    }
-
-    MaterialTheme(
-        colorScheme = colorScheme,
-        typography = Typography,
+        colorScheme = when(themeOption){
+            ThemeOption.DARK -> DarkColorScheme
+            ThemeOption.LIGHT -> LightColorScheme
+            ThemeOption.SYSTEM -> LightColorScheme
+            ThemeOption.NETFLIX -> NetflixDarkColorScheme
+        },
         content = content
     )
 }

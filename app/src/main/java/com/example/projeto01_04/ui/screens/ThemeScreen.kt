@@ -50,6 +50,7 @@ fun ThemeScreen(viewModel: ThemeViewModel = viewModel()) {
                         ThemeOption.SYSTEM -> "Sistema"
                         ThemeOption.LIGHT -> "Claro"
                         ThemeOption.DARK -> "Escuro"
+                        ThemeOption.NETFLIX -> "Netflix"
                     },
                     style = MaterialTheme.typography.bodyLarge,
                     modifier = Modifier.padding(start = 8.dp)
